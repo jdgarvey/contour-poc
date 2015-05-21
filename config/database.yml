@@ -4,9 +4,14 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
+development:
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  database: myapp_development
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_test
   pool: 5
